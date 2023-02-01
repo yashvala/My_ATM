@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="transaction"
+            type="com.example.myatm.roomDB.TransactionModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutOneTrans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalAmountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.2"
+                    app:total_amount="@{transaction.totalAmount}" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rs100CountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.2"
+                    android:text="@{String.valueOf(transaction.oneHundred)}" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rs200CountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:layout_weight="0.2"
+                    android:text="@{String.valueOf(transaction.twoHundred)}" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rs500CountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.2"
+                    android:text="@{String.valueOf(transaction.fiveHundred)}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rs2000CountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.2"
+                    android:text="@{String.valueOf(transaction.twoThousand)}" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutThreeTrans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutOneTrans">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rs10CountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.2"
+                    android:text="@{`Rs. 10: ` + String.valueOf(transaction.ten)}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rs20CountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.2"
+                    android:text="@{`Rs. 20: ` + String.valueOf(transaction.twenty)}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rs50CountTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.2"
+                    android:text="@{ `Rs. 50: ` + String.valueOf(transaction.fifty)}" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
